@@ -1,2 +1,2 @@
 # ZyneticWeather
-Weather application
+Weather application by Anushka Verma 2205712.
