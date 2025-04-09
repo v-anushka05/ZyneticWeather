@@ -1,25 +1,23 @@
-import React from 'react';
+import React from "react";
 
-function WeatherCard({ weather }) {
-  const { name, main, weather: weatherInfo, wind } = weather;
-  const iconUrl = `https://openweathermap.org/img/wn/${weatherInfo[0].icon}@2x.png`;
+const WeatherCard = ({ weatherData }) => {
+  const weatherIconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
 
   return (
-    <div className="flex">
-      <div id="weatherCountry">{name}</div>
-      <div id="tempIcon">
-        <img src={iconUrl} alt={weatherInfo[0].description} />
+    <div className="weather-card">
+      <h2>{weatherData.name}</h2>
+      <h3>{Math.round(weatherData.main.temp)}°C</h3>
+      <img src={weatherIconUrl} alt={weatherData.weather[0].description} className="weather-icon" />
+      <p>{weatherData.weather[0].description}</p>
+      <div className="weather-details">
+        <p>Feels Like: {Math.round(weatherData.main.feels_like)}°C</p>
+        <p>Humidity: {weatherData.main.humidity}%</p>
+        <p>Longitude: {weatherData.coord.lon}</p>
+        <p>Latitude: {weatherData.coord.lat}</p>
       </div>
-      <div id="temperature">
-        Temperature: <b>{main.temp}°C</b>
-      </div>
-      <div id="weatherDescription">{weatherInfo[0].description}</div>
-      <ul>
-        <li>Humidity: {main.humidity}%</li>
-        <li>Wind Speed: {wind.speed} km/h</li>
-      </ul>
+      <p className="footer-text">DONE BY ANUSHKA</p>
     </div>
   );
-}
+};
 
 export default WeatherCard;

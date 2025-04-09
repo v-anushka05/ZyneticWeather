@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx'; // Note the `.jsx` extension
-import ErrorBoundary from './ErrorBoundary.js'; // Ensure this path matches
+import App from './App.jsx'; 
+import ErrorBoundary from './ErrorBoundary.js'; 
 import './styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
